@@ -23,6 +23,21 @@ namespace SuperSimpleLyncKiosk
                 return;
             }
 
+            // Ensure only Lync loads
+            if (Process.GetProcessesByName("lync").Length <= 0)
+            {
+                Process.Start("lync");
+                System.Threading.Thread.Sleep(10000);
+                if (Process.GetProcessesByName("lync").Length <= 0)
+                {
+                    Application.Current.Shutdown();
+                    return;
+                }
+            }
+            else {
+                System.Threading.Thread.Sleep(5000);
+            }
+
             base.OnStartup(e);
         }
     }

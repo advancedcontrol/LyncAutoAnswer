@@ -8,7 +8,7 @@ using Microsoft.Lync.Model;
 using Microsoft.Lync.Model.Conversation;
 using Microsoft.Lync.Model.Conversation.AudioVideo;
 
-namespace SuperSimpleLyncKiosk
+namespace LyncKiosk
 {
     public static class LyncExtensions
     {
